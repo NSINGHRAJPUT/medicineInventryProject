@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import './MedicineInputForm.css'
+import CartContext from '../../store/cart-context';
 
 const MedicineInputForm = () =>{
+    const cartCtx=useContext(CartContext)
     let name,desc,price,obj;
     const nameHandler=(e)=>{
         name=e.target.value
@@ -14,11 +17,12 @@ const MedicineInputForm = () =>{
     const submitHandler=(e)=>{
         e.preventDefault();
         obj={
-            Name:name,
-            Description:desc,
-            Price:price
+            id:cartCtx.medicines.length,
+            name:name,
+            description:desc,
+            price:price
         }
-       console.log(obj)
+       cartCtx.addList(obj)
     }
     return <form className='form' onSubmit={submitHandler}>
             <label>Medicine Name</label>

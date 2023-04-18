@@ -6,9 +6,9 @@ const MealList = ({ name, description, price, id }) => {
   const cartCtx = useContext(CartContext);
 
   let newAmount = 1;
-  const amountHandler = (e) => {
-    e.preventDefault();
-    newAmount = e.target.value;
+  const amountHandler = (event) => {
+    event.preventDefault();
+    newAmount = event.target.value;
   };
   const mealsAddHandler = (e) => {
     e.preventDefault();
@@ -35,8 +35,8 @@ const MealList = ({ name, description, price, id }) => {
             type="number"
             onChange={amountHandler}
             defaultValue="1"
-            max={10}
-            min={1}
+            max="10"
+            min="1"
             className="item-input"
           ></input>
           <br />

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Header from "./components/Layout/Header";
-import Meals from "./components/Meals/Meals";
+import MedicineInputForm from './components/MedicineInputForm/MedicineInputForm'
+import Medicines from "./components/Medicine/Medicines";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
-import MedicineInputForm from './components/MedicineInputForm/MedicineInputForm'
 
 function App() {
   const [cartVisible, setCartVisible] = useState(false);
@@ -20,8 +20,8 @@ function App() {
     <CartProvider>
       {cartVisible && <Cart onCloseCart={cartHideHandler} />}
       <Header onCartClick={cartVisibleHandler} />
-      <MedicineInputForm/>
-      <Meals />
+      <MedicineInputForm />
+      <Medicines />
     </CartProvider>
   );
 }

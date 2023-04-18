@@ -17,7 +17,6 @@ const Cart = ({ onCloseCart }) => {
 
   const removeItemHandler = (e) =>{
     e.preventDefault();
-    console.log(e.target.value)
     cartCtx.removeItem(e.target.value)
   }
   let finalPrice=0;
